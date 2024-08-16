@@ -4,7 +4,9 @@ const DasboardSlice = createSlice({
     name: 'Dasboard',
     initialState: {
         search: '',
-        openSideDrawer: false
+        openSideDrawer: false,
+        tempSelectedWidget: {},
+        selectedWidget: {}
     },
     reducers: {
         updateSearch: (state, action) => {
@@ -12,9 +14,15 @@ const DasboardSlice = createSlice({
         },
         updateSideDrawer: (state) => {
             state.openSideDrawer = !state.openSideDrawer
-        }
+        },
+        updateTempSelectedWidget: (state, action) => {
+            state.tempSelectedWidget = action.payload
+        },
+        updateSelectedWidget: (state, action) => {
+            state.selectedWidget = action.payload
+        },
     }
 })
 
-export const { updateSearch, updateSideDrawer } = DasboardSlice.actions;
+export const { updateSearch, updateSideDrawer, updateTempSelectedWidget, updateSelectedWidget } = DasboardSlice.actions;
 export default DasboardSlice.reducer;

@@ -1,21 +1,24 @@
 import { useDispatch, useSelector } from "react-redux";
 import SideDrawer from "../reusable/SideDrawer";
 import TopBar from "./TopBar";
-import AddWidget from "./AddWidget";
-import { updateSideDrawer } from "../../redux-store/slice/DashboardSlice";
+import AddWidgetContainer from "./AddWidgetContainer";
+import { updateSideDrawer, updateTempSelectedWidget } from "../../redux-store/slice/DashboardSlice";
+import WidgetBoard from "./WidgetBoard";
 
 const WidgetsContainer = () => {
     const dispatch = useDispatch();
     const sideDrawerStatus = useSelector((store: { dashboard: { openSideDrawer: boolean } }) => store.dashboard.openSideDrawer)
     const toggleSideBar = () => {
-        dispatch(updateSideDrawer())
+        dispatch(updateSideDrawer());
+        dispatch(updateTempSelectedWidget({}));
     }
 
     return (
         <div className="widgets-container">
             <TopBar />
+            <WidgetBoard />
             <SideDrawer open={sideDrawerStatus} toggle={toggleSideBar}>
-                <AddWidget onClose={toggleSideBar} />
+                <AddWidgetContainer onClose={toggleSideBar} />
             </SideDrawer>
         </div>
     )

@@ -1,3 +1,49 @@
 .side-drawer{
     width: 450px;
 }
+
+.widget-row{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .card-container{
+        display: flex;
+        width: 100%;
+        background-color: #f0f5fa; /* Light background color */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Very light shadow */
+        border-radius: 8px; /* Optional rounded corners */
+        padding: 12px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+.card{
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    min-width: 350px;
+    min-height: 200px;
+    border-radius: 8px;
+}
+
+.card-fallback{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.widget-selector-container{
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    .check-box-wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 48px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        padding: 0px 8px;
+    }
+}
