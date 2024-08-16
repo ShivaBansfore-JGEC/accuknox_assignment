@@ -1,1 +1,6 @@
 @use "./Dashboard.scss";
+@use "./reusable.scss";
+@use "./utility.scss";
+*{
+    box-sizing: border-box;
+}
