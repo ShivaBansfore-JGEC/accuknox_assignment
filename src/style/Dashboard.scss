@@ -18,15 +18,22 @@
         gap: 4px;
         align-items: center;
     }
+    &-right{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
 
 .widgets-container{
     width: 100%;
     background-color: #f0f5fa;
     height: calc(100% - 60px);
-    padding: 12px 24px;
+    min-height: 100vh;
+    padding: 12px 56px;
     display: flex;
     flex-direction: column;
+    gap: 24px;
 }
 
 .top-bar{
@@ -35,8 +42,6 @@
     justify-content: space-between;
     .MuiButton-outlined{
         text-transform: capitalize;
-        border-color: #c5c2c2;
-        color: #79828e;
     }
 }
 
@@ -72,8 +77,21 @@
     }
 }
 
+.widget-board{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 
 
 .widget-button{
     text-transform: capitalize !important;
+}
+
+.refresh-button{
+    .css-9tj150-MuiButton-endIcon{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
 }

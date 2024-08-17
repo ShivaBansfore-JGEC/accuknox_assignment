@@ -5,7 +5,8 @@
 .widget-row{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    gap: 8px;
     .card-container{
         display: flex;
         width: 100%;
@@ -22,9 +23,15 @@
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    min-width: 350px;
-    min-height: 200px;
-    border-radius: 8px;
+    min-width: 600px;
+    min-height: 300px;
+    border-radius: 16px;
+    .card-header{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .card-fallback{
@@ -45,5 +52,12 @@
         border: 1px solid #eaeaea;
         border-radius: 8px;
         padding: 0px 8px;
+    }
+}
+
+.search-bar{
+    .MuiInputBase-root{
+        height: 32px;
+        width: 350px;
     }
 }

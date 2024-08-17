@@ -1,4 +1,5 @@
 import ClearIcon from '@mui/icons-material/Clear';
+import { cloneDeep } from 'lodash';
 import { Button } from '@mui/material';
 import AddWidget from '../AddWidget';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +14,7 @@ const AddWidgetContainer = (props: widgetProps) => {
 
 
     const onConfirmAddWidgets = () => {
-        dispatch(updateSelectedWidget(JSON.parse(JSON.stringify(tempSelectedWidget))));
+        dispatch(updateSelectedWidget(cloneDeep(tempSelectedWidget)));
         dispatch(updateTempSelectedWidget({}));
         onClose();
     }

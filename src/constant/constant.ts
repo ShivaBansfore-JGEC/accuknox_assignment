@@ -1,3 +1,5 @@
+import { CHART_CLOUD_ACCOUNTS, CHART_CLOUD_RISK_ASSESSMENT, CHART_CWPP_WORKLOAD, CHART_CWPP_SPECIFIC_ALERTS, CHART_IMAGE_RISK_ASSESMENT, IMAGE_SECURITY_ISSUE } from "./chart_data"
+
 export const PAGE_STRING = {
     pageTitle: 'CNAPP Dashboard'
 }
@@ -137,37 +139,37 @@ export const WIDGETS = [
         type: WIDGET_CATEGORY.CSPM,
         title: 'Cloud accounts',
         id: WIDGET_IDS.CLOUD_ACCOUNTS,
-        data: {}
+        data: CHART_CLOUD_ACCOUNTS,
     },
     {
         type: WIDGET_CATEGORY.CSPM,
         title: 'Cloud Account Risk Assessment',
         id: WIDGET_IDS.CLOUD_ACCOUNT_RISK_ASSESMENT,
-        data: {}
+        data: CHART_CLOUD_RISK_ASSESSMENT,
     },
     {
         type: WIDGET_CATEGORY.CWPP,
         title: 'Specific Alerts',
         id: WIDGET_IDS.SPECIFIC_ALERTS,
-        data: {}
+        data: CHART_CWPP_SPECIFIC_ALERTS,
     },
     {
         type: WIDGET_CATEGORY.CWPP,
         title: 'Workload Alerts',
         id: WIDGET_IDS.WORKLOAD_ALERTS,
-        data: {}
+        data: CHART_CWPP_WORKLOAD,
     },
     {
         type: WIDGET_CATEGORY.REGISTRY_SCAN,
         title: 'Image Risk Assessment',
         id: WIDGET_IDS.IMAGE_RISK_ASSESSMENT,
-        data: {}
+        data: CHART_IMAGE_RISK_ASSESMENT,
     },
     {
-        type: WIDGET_CATEGORY.CSPM,
+        type: WIDGET_CATEGORY.REGISTRY_SCAN,
         title: 'Image Security Issue',
         id: WIDGET_IDS.IMAGE_SECURITY_ISSUE,
-        data: {}
+        data: IMAGE_SECURITY_ISSUE,
     },
 
 ]

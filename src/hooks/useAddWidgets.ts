@@ -1,4 +1,5 @@
 import { useMemo, useEffect } from "react";
+import { cloneDeep } from "lodash";
 import { WIDGETS_FOR_ADDING } from "../constant/constant";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTempSelectedWidget } from "../redux-store/slice/DashboardSlice";
@@ -8,6 +9,7 @@ const useAddWidgets = (selectedTab: string) => {
     const dispatch = useDispatch();
     const tempSelectedWidget = useSelector((store: { dashboard: { tempSelectedWidget: any } }) => store.dashboard.tempSelectedWidget);
     const finalSelectedWidget = useSelector((store: { dashboard: { selectedWidget: any } }) => store.dashboard.selectedWidget);
+    console.log({ finalSelectedWidget })
 
     const widgets = useMemo(() => {
         return WIDGETS_FOR_ADDING.find((widget: any) => widget.type === selectedTab)?.childWidget || [];
@@ -31,7 +33,7 @@ const useAddWidgets = (selectedTab: string) => {
     }
 
     const setInitialState = () => {
-        dispatch(updateTempSelectedWidget(JSON.parse(JSON.stringify(finalSelectedWidget))));
+        dispatch(updateTempSelectedWidget(cloneDeep(finalSelectedWidget)));
     }
 
     useEffect(() => {

@@ -6,7 +6,20 @@ const DasboardSlice = createSlice({
         search: '',
         openSideDrawer: false,
         tempSelectedWidget: {},
-        selectedWidget: {}
+        selectedWidget: {
+            "cspm": [
+                "cloud_accounts",
+                "cloud_account_risk_assesment"
+            ],
+            "cwpp": [
+                "specific_alerts",
+                "workload_alerts"
+            ],
+            "registry_scan": [
+                "image_risk_assesment",
+                "image_security_issue"
+            ]
+        }
     },
     reducers: {
         updateSearch: (state, action) => {
